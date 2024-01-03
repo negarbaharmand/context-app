@@ -4,12 +4,10 @@ import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
   // Use the useContext hook to access the theme context
-  const themeContext = useContext(ThemeContext);
-  const { isLightTheme, light, dark } = themeContext;
+  const { isLightTheme, light, dark } = useContext(ThemeContext);
   const theme = isLightTheme ? light : dark;
 
-  const authContext = useContext(AuthContext);
-  const { isAuthenticated, toggleAuth } = authContext;
+  const { isAuthenticated, toggleAuth } = useContext(AuthContext);
 
   return (
     <nav style={{ background: theme.ui, color: theme.syntax }}>
