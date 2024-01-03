@@ -1,11 +1,11 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
-  let isAuthenticated = false;
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const toggleAuth = () => {
-    isAuthenticated = !isAuthenticated;
+    setIsAuthenticated((prevIsAuthenticated) => !prevIsAuthenticated);
   };
 
   return (
